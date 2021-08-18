@@ -76,45 +76,44 @@ const [search, setSearch] = useState("")
   console.log("updated", state);
   console.log("search",search);
   return (
-
-
     <>
-
       <div className="searchbar">
-        <input placeholder="Seach..." onChange={(e)=>{setSearch(e.target.value)}} />
+        <input
+          placeholder="Seach album name..."
+          onChange={(e) => {
+            setSearch(e.target.value);
+          }}
+        />
       </div>
 
-<AddAlbum  updateAlbum={updateAlbum}  />
+      <AddAlbum updateAlbum={updateAlbum} />
 
       <div className="App">
-        {state.filter((val, index) => {
-          if (search == "") {
-          return val
-          }
-          else if (val.album_title.toLowerCase().includes(search.toLowerCase())) {
-            return val
-          }
-      }).map((item, index) => {
-        return (
-          <Albums
-            key={index}
-            id={item.id}
-            album_name={item.album_title}
-            musician_name={item.artist}
-            album_cover={item.album_cover}
-            songs={item.songs}
-            handleDelete={handleDelete}
-          />
-        );
-      })}
-
-      
+        {state
+          .filter((val, index) => {
+            if (search == "") {
+              return val;
+            } else if (
+              val.album_title.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((item, index) => {
+            return (
+              <Albums
+                key={index}
+                id={item.id}
+                album_name={item.album_title}
+                musician_name={item.artist}
+                album_cover={item.album_cover}
+                songs={item.songs}
+                handleDelete={handleDelete}
+              />
+            );
+          })}
       </div>
-      
-
-      
-</>
-  
+    </>
   );
 }
 

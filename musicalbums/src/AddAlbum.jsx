@@ -40,7 +40,7 @@ const AddAlbum = (props) => {
     };
 
     return (
-      <div>
+      <div style={{ height: "70vh", width: "25%", border: "1px solid green" }}>
         <div>
           {" "}
           <h1>Add Your Album</h1>{" "}
@@ -75,16 +75,19 @@ const AddAlbum = (props) => {
           </div>
           <div>
             {" "}
-            <input type="submit" value="Submit" onClick={()=>props.updateAlbum(state)} />
+            <input
+              type="submit"
+              value="Submit"
+              onClick={() => props.updateAlbum(state)}
+            />
           </div>
-            </form>
-            <div style={{color: "blue", width:"320px", height:"300px"}}>
-                <img src={state.image} alt="" width="300px" height="300px" />
-               { console.log(state.image)}
-            <p>  album_name: {state.album_title}</p>
-            <p>artist: {state.artist}</p>
-            </div>
-           
+        </form>
+        <div style={{ color: "blue", width: "220px", height: "200px" }}>
+          <img src={state.image} alt="" width="200px" height="190px" />
+          {console.log(state.image)}
+          <p> album_name: {state.album_title}</p>
+          <p>artist: {state.artist}</p>
+        </div>
       </div>
     );
 };

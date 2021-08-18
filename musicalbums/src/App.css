@@ -41,3 +41,14 @@
 .formdata{
   padding: auto;
 }
+
+.searchbar{
+  margin: 15px auto;
+}
+
+.searchbar input{
+width: 300px;
+height: 40px;
+font-size: 25px;
+
+}
